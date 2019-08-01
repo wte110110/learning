@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	 
+	<bean id="person" class="com.wte.le.spring.Person">
+	<!-- 构造器注入 -->
+	<constructor-arg name="name" value="wte"></constructor-arg>
+	<constructor-arg index="1" value="18"></constructor-arg>
+	<constructor-arg name=""><ref bean="food"/></constructor-arg>
+	<!--  
+		<property name="name" value="wte"></property>
+		<property name="age" value="31"></property>
+		<property name="food" ref="food"></property>
+	 -->
+	</bean>
+	<alias name="person" alias="alias_person"/>
+	<import resource="applicationContext-server.xml"/>
+</beans>
