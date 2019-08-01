@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="other" class="com.wte.le.spring.OtherPropertyDI">
+		<property name="properties">
+			<props >
+				<prop key="administrator">"administrator"@example.org</prop>
+				<prop key="support">support@example.org </prop>
+				<prop key="development">support@example.org</prop>
+			</props>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="anEntry" value="just some string"></entry>
+				<entry key="aRef" value-ref="food"></entry>
+			</map>
+		</property>
+	</bean>
+	<import resource="applicationContext-import-food"/>
+</beans>
